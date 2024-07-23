@@ -1,14 +1,21 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math/rand"
 	"time"
 )
 
 func main() {
-	ai := NewNimAI(0.5, 0.1)
-	ai.Train(100000)
+	alpha := flag.Float64("alpha", 0.5, "learning rate")
+	epsilon := flag.Float64("epsilon", 0.1, "exploration rate")
+	train := flag.Int("n", 100000, "number of training iterations")
+
+	flag.Parse()
+
+	ai := NewNimAI(*alpha, *epsilon)
+	ai.Train(*train)
 	play(ai)
 }
 
@@ -201,6 +208,8 @@ func (ai *NimAI) ChooseMove(state Board, epsilon bool) [2]int {
 }
 
 func (ai *NimAI) Train(n int) {
+
+	fmt.Println("training...")
 
 	type action struct {
 		state Board
