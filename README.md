@@ -1,6 +1,8 @@
 # Nim Game AI
 
-This software implements a command-line Nim game with an AI opponent that learns through reinforcement learning. The AI uses Q-learning to improve its strategy over time.
+This software implements a command-line [Nim game](https://en.wikipedia.org/wiki/Nim) with an AI opponent that learns through reinforcement learning. The AI uses Q-learning to improve its strategy over time.
+
+This code was inspired by https://cs50.harvard.edu/ai/2024/projects/4/nim/
 
 ## Usage
 
@@ -15,7 +17,7 @@ go build
 You can run the Nim game with the AI opponent by using the following command:
 
 ```bash
-./nim -alpha=0.5 -epsilon=0.1 -n=100000
+./nim -alpha=0.5 -epsilon=0.1 -n=10000
 ```
 
 ### Available flags:
