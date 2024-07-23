@@ -10,7 +10,7 @@ import (
 func main() {
 	alpha := flag.Float64("alpha", 0.5, "learning rate")
 	epsilon := flag.Float64("epsilon", 0.1, "exploration rate")
-	train := flag.Int("n", 100000, "number of training iterations")
+	train := flag.Int("n", 10000, "number of training iterations")
 
 	flag.Parse()
 
